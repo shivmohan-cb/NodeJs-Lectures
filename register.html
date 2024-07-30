@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - form</title>
+</head>
+<style>
+    *{
+        border:2px solid black;
+        box-sizing: border-box;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    label,input,textarea {
+        
+        margin:0.25rem auto 0.25rem auto;
+        width: 50%;
+        display:block;
+    }
+    label {
+        text-align: left;
+        border:none;
+    }
+    button {
+        padding: 0.5rem 1rem;
+        margin-right: 0;
+        text-align: right;
+        color: white;
+        background-color:blue;
+        border:none;
+        border-radius: 0.5rem;
+    }
+</style>
+<body>
+    <form action="/register" method="post">
+    
+        <label>Name</label>
+        <input type="text" name="userName">
+        <label>Email</label>
+        <input type="email" name="email">
+        <label>Post</label>
+        <textarea name="post"></textarea>
+        <button type="submit">Post</button>
+    </form>
+</body>
+</html>
