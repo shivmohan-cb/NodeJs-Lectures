@@ -1,0 +1,15 @@
+* {
+    border-radius: 1rem;
+    border: 2px solid black;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+ color : black;
+}
+p {
+    width: 70%;
+    margin: 8px auto;
+}
