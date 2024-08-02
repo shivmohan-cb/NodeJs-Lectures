@@ -1,0 +1,26 @@
+[
+    {
+        "id": "2507671",
+        "name": "Mohan",
+        "email": "Mohan@gmail.com",
+        "password": "124456789"
+    },
+    {
+        "id": "4752735",
+        "name": "Raju",
+        "email": "Raju@gmail.com",
+        "password": "124456789"
+    },
+    {
+        "id": "4768602",
+        "name": "Birbal",
+        "email": "birbal@gmail.com",
+        "password": "124456789"
+    },
+    {
+        "id": "4788602",
+        "name": "Shekhchili",
+        "email": "Shekhchili@gmail.com",
+        "password": "124456789"
+    }
+]
