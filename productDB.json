@@ -1,0 +1,29 @@
+[
+    {
+        "productName": "name",
+        "category": "accesories",
+        "images": [
+            "image 1 url",
+            "image 2 url",
+            "image 3 url"
+        ]
+    },
+    {
+        "productName": "Shaka laka boom boom",
+        "category": "Stationary",
+        "images": [
+            "productImages\\eb854f3294c6093e474e2730ad886891",
+            "productImages\\8e96f8d1d6384771b3ad6c0a8a88531a",
+            "productImages\\dfa18b6574e7af57c85e5725a5924aa3"
+        ]
+    },
+    {
+        "productName": "Halwa",
+        "category": "Food",
+        "images": [
+            "productImages\\ec44abb8448e5270b8b5cb0e3b315f6a",
+            "productImages\\fa34306a71a9fa1faced2b547daae068",
+            "productImages\\310fba035f8da5dd3a3f2240ce049f22"
+        ]
+    }
+]

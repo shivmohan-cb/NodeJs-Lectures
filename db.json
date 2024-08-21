@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Shiv",
+        "email": "email@gmail.com",
+        "password": "23456",
+        "profileImage": "uploads/<filename || hased name>"
+    },
+    {
+        "name": "Shiv",
+        "email": "someones@gmail.com",
+        "password": "12345678",
+        "imageUrl": "userImages\\3ac8baeb5f8ca24dc89ef75e7e7a9c7c"
+    }
+]
