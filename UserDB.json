@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1724144286086,
+        "name": "Shiv",
+        "email": "someones@gmail.com",
+        "password": "12345",
+        "imageUrl": "http://localhost:1234/camera testing.png"
+    },
+    {
+        "id": 1724145056079,
+        "name": "Mogli",
+        "email": "Mogli@gmail.com",
+        "password": "asdfghjkl",
+        "imageUrl": "http://localhost:1234/mogli.jpg"
+    },
+    {
+        "id": 1724145163901,
+        "name": "Raju Srivastav",
+        "email": "rajusrivatav@gmail.com",
+        "password": "12345678",
+        "imageUrl": "http://localhost:1234/Raju.jpg"
+    },
+    {
+        "id": 1724145246031,
+        "name": "Hema",
+        "email": "hema@gmail.com",
+        "password": "123455687",
+        "imageUrl": "http://localhost:1234/chutki.jpg"
+    },
+    {
+        "id": 1724145281634,
+        "name": "Kaliya Sarkar",
+        "email": "kaliyasarkar@gmail.com",
+        "password": "09876543",
+        "imageUrl": "http://localhost:1234/Kaliya Sarkar.jpg"
+    }
+]
