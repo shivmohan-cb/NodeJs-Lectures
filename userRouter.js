@@ -3,13 +3,14 @@ const path = require("path");
 const TodoDB = require("./TodoDB.json");//{}
 const multer = require("multer");
 const option = { root: path.join(__dirname, "public") }
+const UserDB = require("./UserDB.json");
 
 const storage = multer.diskStorage({
    destination: (req, file, cb) => {
-      cb(null, "userImage/");
+      cb(null, "public/userImage/");
    },
    filename: (req, file, cb) => {
-      let filename = file.originalname;
+      let filename = file.originalname.split(" ").join("-");
       cb(null, filename);
    }
 });
@@ -19,13 +20,15 @@ const singleUpload = multer({
 }).single("image");
 
 user.get("/register", (req, res) => {
-   // send register form
-   res.sendFile("Register.html", option);
+   //redirect user to home page if loggedin
+   if(req.session.user) res.redirect("/");
+  // send register form
+   else res.sendFile("Register.html", option);
 })
 
 user.post("/register", singleUpload, (req, res, next) => {
    // acsess register form data 
-   let domainName = "localhost:2000/";
+   let domainName = "http://localhost:2000/userImage/";
    let file = req.file;
    let { name, email, password } = req.body;
    let database = UserDB;
@@ -39,7 +42,7 @@ user.post("/register", singleUpload, (req, res, next) => {
       let newUser = {
          id: new Date().getTime(),
          name, email, password,
-         image: domainName + file.originalname
+         image: domainName + file.originalname.split(" ").join("-")
       }
       database.push(newUser);
       fs.writeFile("UserDB.json", JSON.stringify(database), (err) => {

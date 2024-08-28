@@ -8,10 +8,11 @@ const option = {root:path.join(__dirname,"public")}
 
 const storage = multer.diskStorage({
     destination: (req,file,cb)=>{
-       cb(null,"todoImage/");
+       cb(null,"public/todoImage/");
     },
     filename: (req,file,cb)=>{
-       let filename = file.originalname;
+      console.log(file);
+       let filename = file.originalname.split(" ").join("-");
         cb(null,filename);
     }
 });
@@ -29,15 +30,17 @@ todo.get("/add",isAuth,(req,res)=>{
 //Create todo - post
 todo.post("/add",singleUpload,isAuth,(req,res,next)=>{
 // create todo item
-let domainName = "localhost:2000/";
+let domainName = "http://localhost:2000/todoImage/";
+let imagePlaceholder = "todo-image-place-holder.jpg";
  let file = req.file;
+ console.log(file);
  let {title, desc, status} = req.body;
  let database = TodoDB;
  let TodoItem = {
     id: new Date().getTime(),
     userId: req.session.user.id,
     title,desc,status,
-    image : domainName + file.originalname
+    image : domainName + (!file ?  imagePlaceholder: file?.originalname.split(" ").join("-"))
  }
 
  database[req.session.user.id].push(TodoItem);// access user todos and push new item
@@ -60,22 +63,24 @@ todo.get("/",isAuth,(req,res)=>{
 //put 
 todo.put("/update/:id",singleUpload,isAuth,(req,res,next)=>{
 // update todo
-let domainName = "localhost:2000/";
+let domainName = "http://localhost:2000/todoImage/";
 let TodoID = req.params.id;
 let file = req.file;
 let {title, desc, status}= req.body;
 let database = TodoDB;
-let index = database.findIndex((elm)=>elm.id==TodoID);
+let userTodoList = database[req.session.user.id];
+let index = userTodoList.findIndex((elm)=>elm.id==TodoID);
 if(index>=0){
   let updateItem = {
-    id: database[index].id,// preserving old todo item id
+    id: userTodoList[index].id,// preserving old todo item id
     title,desc,status,image: domainName + file.originalname
   }
-database[index] = updateItem;
-fs.writeFile("TodoDB.josn",JSON.stringify(database),(err)=>{
+userTodoList[index] = updateItem;
+database[req.session.user.id] = userTodoList;
+fs.writeFile("TodoDB.json",JSON.stringify(database),(err)=>{
     if(err) next(err);
        else res.send({
-        id: database[index].id,
+        id: userTodoList[index].id,
         message: "Your Todo item Updated"
        })
  })
@@ -87,15 +92,16 @@ fs.writeFile("TodoDB.josn",JSON.stringify(database),(err)=>{
 //patch
 todo.patch("/patch/:id",singleUpload,isAuth,(req,res,next)=>{
 // update todo one feild
-let domainName = "localhost:2000/";
+let domainName = "http://localhost:2000/todoImage/";
 let TodoID = req.params.id;
 let file = req.file;
 let {title, desc, status}= req.body;
 let database = TodoDB;
-let index = database.findIndex((elm)=>elm.id==TodoID);
+let userTodoList = database[req.session.user.id];
+let index = userTodoList.findIndex((elm)=>elm.id==TodoID);
 if(index>=0){
   let updateItem = {
-   ...database[index]
+   ...userTodoList[index]
   }
   if(title) updateItem.title = title;
    else if(desc) updateItem.desc = desc;
@@ -103,12 +109,13 @@ if(index>=0){
    else if(file) updateItem.image = domainName+file.originalname;
    else updateItem  = updateItem;
 
-database[index] = updateItem;
-fs.writeFile("TodoDB.josn",JSON.stringify(database),(err)=>{
+userTodoList[index] = updateItem;
+database[req.session.user.id] = userTodoList;
+fs.writeFile("TodoDB.json",JSON.stringify(database),(err)=>{
     if(err) next(err);
        else res.send({
-        id: database[index].id,
-        message: "Your Todo item Updated with Patch request"
+        id: userTodoList[index].id,
+        message: "Todo item Updated with Patch request"
        })
  })
 }else{

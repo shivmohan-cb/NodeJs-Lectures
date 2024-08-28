@@ -6,7 +6,11 @@ const option = {root:path.join(__dirname,"public")}
 
 auth.get("/login",(req,res)=>{
 // send login form
-res.sendFile("Login.html",option);
+if(req.session.user){
+  res.redirect("/");
+}
+else res.sendFile("Login.html",option);
+
 })
 
 auth.post("/login",(req,res)=>{

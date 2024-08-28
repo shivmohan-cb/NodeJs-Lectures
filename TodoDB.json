@@ -4,41 +4,17 @@
             "id": 1724748444561,
             "userId": 1724746193972,
             "title": "Todo application",
-            "desc": "lecture 26",
+            "desc": "Application for creating todo list for personal use",
             "status": "on",
-            "image": "localhost:2000/chutki.jpg"
+            "image": "http://localhost:2000/todoImage/chutki.jpg"
         },
         {
-            "id": 1724752028297,
+            "id": 1724854884438,
             "userId": 1724746193972,
-            "title": "aaffasfsasdf",
-            "desc": "afdsfasfafs",
-            "status": "on",
-            "image": "localhost:2000/chutki.jpg"
-        },
-        {
-            "id": 1724752102312,
-            "userId": 1724746193972,
-            "title": "New item",
-            "desc": "pichle lecture mai incomplete tha",
-            "status": "on",
-            "image": "localhost:2000/Kaliya Sarkar.jpg"
-        },
-        {
-            "id": 1724752218451,
-            "userId": 1724746193972,
-            "title": "New Item 2",
-            "desc": "agagadfasfdsaf",
-            "status": "on",
-            "image": "localhost:2000/Raju.jpg"
-        },
-        {
-            "id": 1724752297945,
-            "userId": 1724746193972,
-            "title": "Remove watch mode",
-            "desc": "removed watch mode from",
-            "status": "on",
-            "image": "localhost:2000/Kaliya Sarkar.jpg"
+            "title": "push this code",
+            "desc": "want to push this on github, so that everyone can see",
+            "image": "http://localhost:2000/todoImage/todo-image-place-holder.jpg",
+            "status": "off"
         }
     ],
     "1724746673473": []
