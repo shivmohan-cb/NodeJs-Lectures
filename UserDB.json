@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1724746193972,
+        "name": "Test 1",
+        "email": "test1@gmail.com",
+        "password": "123456",
+        "image": "localhost:2000/Raju.jpg"
+    },
+    {
+        "id": 1724746673473,
+        "name": "test 2",
+        "email": "test2@gmail.com",
+        "password": "1234556",
+        "image": "localhost:2000/mogli.jpg"
+    }
+]
