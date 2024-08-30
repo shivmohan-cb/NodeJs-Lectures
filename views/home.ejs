@@ -1,0 +1,12 @@
+    <%- include("partials/header"); %>
+    <main>
+    <h1>
+        <%= ejsText %>
+    </h1>
+    <% for(let i=0;i<something.length;i++){ %>
+        <h2>
+            <%= something[i].title %>
+        </h2>
+        <% } %>
+    </main>
+<%- include("partials/footer"); %>
