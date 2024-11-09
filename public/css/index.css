@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex: auto;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 0.5rem 0.5rem;
+    nav {
+       display: flex;
+       gap: 0.5rem; 
+       a {
+         color: white;
+         border: 1px solid white;
+         border-radius: 0.75rem;
+         padding: 0.5em 0.75em;
+         text-transform: capitalize;
+         text-decoration: none;
+        &:hover {
+          color: black;
+          background-color: white;
+        }
+       }
+    }
+
+}
+
+footer {
+    background-color: black;
+    padding: 0.5rem 0.5rem;
+
+    p {
+        color :white;
+         text-align: center;
+    }
+}

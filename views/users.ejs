@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head") %>
+
+    <body>
+        <%- include("./partials/navbar") %>
+            <main>
+                <h1>All Users Name</h1>
+
+                <ul>
+                    <% for(let i=0;i<myUsers.length;i++){ %>
+                        <li>
+                            <%= myUsers[i] %>
+                        </li>
+                        <% } %>
+                </ul>
+            </main>
+            <%- include("./partials/footer") %>
+
+    </body>
+
+</html>
